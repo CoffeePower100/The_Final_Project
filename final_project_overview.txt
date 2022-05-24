@@ -1,13 +1,29 @@
 API:
 
-1. Auth: 1. Register (sign up)
-	 2. Response (verify code)
-	 3. Login --> Token
-	 4. Password Recovery (step 1, 2, 3)
+1. 1. Auth: 1. Register (sign up)
+	     2. Response (verify code)
+	     3. Login --> Token
+		 4. Request password update
+		 5. Password Update (recoverPassCode, email, pass updated)
 
 2. Store: After Login, CRUD - Create, Read, Update, Delete.
 
 Documentation:
 
+1. Requests table: 1. Method (like POST, swagger's methods' colors).
+				   2. Endpoint (relative url: /login).
+				   3. Request: object of request (like: *email, *password).
+				   4. Response: object of valid process response.
+				   5. Error: object of error (message: email or password not found).
+
+2. Flow-chart of project's components.
+
+3. Database Table/s info:
+
+
 Postman:
 Requests
+
+(libs: dev save: nodemon, normal save: bcryptjs body-parser express jsonwebtoken mysql2 sequelize)
+
+Add: controller file end == export default router;
