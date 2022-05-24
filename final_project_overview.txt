@@ -1,0 +1,13 @@
+API:
+
+1. Auth: 1. Register (sign up)
+	 2. Response (verify code)
+	 3. Login --> Token
+	 4. Password Recovery (step 1, 2, 3)
+
+2. Store: After Login, CRUD - Create, Read, Update, Delete.
+
+Documentation:
+
+Postman:
+Requests
