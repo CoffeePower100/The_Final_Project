@@ -18,7 +18,18 @@ Documentation:
 
 2. Flow-chart of project's components.
 
-3. Database Table/s info:
+Database Table/s info:
+
+Table Categories:
+catId - generated categorie's Id
+catName - name of category
+catDesc - description of category
+
+Table Products:
+prodId - generated product's Id
+catId - product's category's id
+prodName - name of product
+prodPrice - price of product
 
 
 Postman:
