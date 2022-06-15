@@ -20,21 +20,30 @@ Documentation:
 
 Database Table/s info:
 
-Table Categories:
-catId - generated categorie's Id
-catName - name of category
-catDesc - description of category
+Table account:
+email - user's email and account's Id.
+firstName - user's first name.
+lastName - user's last name. 
+pass - user's password (encrypted).
+verifyPassCode - pass code number, for account's verifying (after registering).
+updatePassCode - pass code number, for account's updating to new password (after requesting for password's update).
+isApproved - status of verifying account (false - not verified, else - true).
 
-Table Products:
-prodId - generated product's Id
-catId - product's category's id
-prodName - name of product
-prodPrice - price of product
+
+Table category:
+categoryId - generated categorie's Id
+categoryName - name of category
+categoryDesc - description of category
+
+
+Table product:
+productId - generated product's Id
+categoryId - product's category's id
+productName - name of product
+productPrice - price of product
 
 
 Postman:
 Requests
 
 (libs: dev save: nodemon, normal save: bcryptjs body-parser express jsonwebtoken mysql2 sequelize)
-
-Add: controller file end == export default router;
