@@ -1,26 +1,35 @@
 // Postman: Authorization > Type (Bearer Token) + Insert received token after successful login.
 
-import jsonWebToken from 'jsonwebtoken';
-const users = [{email: "a@w.com", pass: "1234", fname = "name"}];
+const jsonWebToken =  require('jsonwebtoken');
+const Account = require('../models/account');
 
 const auth = async(request, response, next) => {
 
     const bearerHeader = request.headers['authorization'];
-    const bearer = bearerHeader.split(' ');
+    const bearer = bearerHeader.split(" ");
     const token = bearer[1];
 
-    const tokenVerify = await jsonWebToken.verify(token, 't Key');
-    const account = /*await*/ users.find(x => x.email == tokenVerify.email);
-
-    if (account){
-        request.account = account;
-        next();
-    }
-    else
-    {
-        return response.sendStatus(403); // Unauthorized
-    }
+    const tokenVerify = await jsonWebToken.verify(token, 'KswkWJ3j4ljL2');
+    Account.findByPk(tokenVerify.email)
+    .then(account => {
+        if (null == account)
+        {
+            // Request from Unauthorized source:
+            return response.status(403).json({
+                message: "unautorized user"
+            });
+        }
+        else
+        {
+            next();
+        }
+    })
+    .catch(err => {
+        return response.status(500).json({
+            error: err
+        });
+    })
 }
 
 
-export default auth;
+module.exports = auth;
