@@ -1,0 +1,629 @@
+{
+	"info": {
+		"_postman_id": "a302738c-2490-4cec-8928-10b2c1b94a59",
+		"name": "The_Final_Project_Reqs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19921737"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"aq\",\n    \"pass\": \"1\",\n    \"firstName\": \"q\",\n    \"lastName\": \"w\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"aq\",\n    \"verifyPassCode\": 5731\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/verifyPassCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"verifyPassCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login To Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"aq\",\n    \"pass\": \"2a\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Password Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"aq\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/reqPassUpdate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"reqPassUpdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Password",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"updatePassCode\" : 52319,\n    \"email\" : \"aq\",\n    \"newPass\": \"2a\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/updatePass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"updatePass"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryName\": \"Shirts\",\r\n    \"categoryDesc\": \"Colorful shirts, tshirts, brand shirts.\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/category/createCategory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"category",
+						"createCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5070/category/getAllCategories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"category",
+						"getAllCategories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Category By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5070/category/getCategory/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"category",
+						"getCategory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Category / Categories By Key Words",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5070/category/getCategoriesByValue/shirts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"category",
+						"getCategoriesByValue",
+						"shirts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Category with Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoryName\": \"hats\",\n    \"categoryDesc\": \"Hats for every head.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/category/updateCategory/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"category",
+						"updateCategory",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Category with Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5070/category/deleteCategory/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"category",
+						"deleteCategory",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryId\": 3,\r\n    \"productName\": \"DC Aquaman shirt\",\r\n    \"productPrice\": 80\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/product/createProduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"product",
+						"createProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5070/product/getAllProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"product",
+						"getAllProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Product By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/product/getProduct/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"product",
+						"getProduct",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Product / Products By Key Words",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/product/getProductsByValue/DC Aquaman shirt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"product",
+						"getProductsByValue",
+						"DC Aquaman shirt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Product / Products By Category Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/product/getProductsByCategory/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"product",
+						"getProductsByCategory",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Product with Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoryId\": 1,\n    \"productName\": \"Marvel Spiderman shoes\",\n    \"productPrice\": 80\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5070/product/updateProduct/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"product",
+						"updateProduct",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Product with Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFxIiwicGFzcyI6IjJhIiwiaWF0IjoxNjU1Mzk3MzQxfQ.G0Ql_U3NEaOxRwb2netIml4oP_GojYCjZyJ9nvzp6UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/product/deleteProduct/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"product",
+						"deleteProduct",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
