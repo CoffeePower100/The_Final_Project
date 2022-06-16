@@ -14,26 +14,38 @@ const auth = async(request, response, next) => {
     
         const token = bearer[1];
 
-        const tokenVerify = jsonWebToken.verify(token, 'KswkWJ3j4ljL2');
-        Account.findByPk(tokenVerify.email)
-        .then(account => {
-            if (null == account)
+        jsonWebToken.verify(token, 'KswkWJ3j4ljL2', (error, tokenVerify) => {
+            // if given token is invalid:
+            if (null != error)
             {
                 // Request from Unauthorized source:
                 return response.status(403).json({
-                    message: "unautorized user"
+                    message: "unauthorized user"
                 });
             }
             else
             {
-                next();
+                Account.findByPk(tokenVerify.email)
+                .then(account => {
+                    if (null == account)
+                    {
+                        // Request from Unauthorized source:
+                        return response.status(403).json({
+                            message: "unauthorized user"
+                        });
+                    }
+                    else
+                    {
+                        next();
+                    }
+                })
+                .catch(err => {
+                    return response.status(500).json({
+                        error: err
+                    });
+                })
             }
-        })
-        .catch(err => {
-            return response.status(500).json({
-                error: err
-            });
-        })
+        });
     }
     else
     {
@@ -41,7 +53,6 @@ const auth = async(request, response, next) => {
             error: "given auth token isn't a string"
         });
     }
-
 }
 
 
