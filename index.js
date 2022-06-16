@@ -11,8 +11,11 @@ app.use(bodyParser.json());
 const accountsRoute = require('./controllers/account');
 app.use('/', accountsRoute);
 
-const productsRoute = require('./controllers/category');
-app.use('/category', productsRoute);
+const categoriesRoute = require('./controllers/category');
+app.use('/category', categoriesRoute);
+
+const productsRoute = require('./controllers/product');
+app.use('/product', productsRoute);
 
 const port = 5070;
 
